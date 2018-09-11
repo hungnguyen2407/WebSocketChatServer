@@ -11,7 +11,7 @@
 		<textarea id="textAreaMessage" rows="10" cols="50"></textarea>
 
 		<script type="text/javascript">
-            var websocket = new WebSocket("ws://webchatserver.azurewebsites.net/chatRoomServer");
+            var websocket = new WebSocket("http://webchatserver.azurewebsites.net/chatRoomServer");
 				websocket.onopen = function(message) {processOpen(message);};
 				websocket.onmessage = function(message) {processMessage(message);};
 				websocket.onclose = function(message) {processClose(message);};
@@ -37,7 +37,6 @@
 					textMessage.value = "";
 				}
 			}
-
 		</script>
 </body>
 </html>
