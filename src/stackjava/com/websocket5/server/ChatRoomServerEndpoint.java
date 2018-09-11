@@ -10,7 +10,7 @@ import java.util.Set;
 @ServerEndpoint(value = "/chatRoomServer")
 public class ChatRoomServerEndpoint {
 
-	static Set<Session> users = Collections.synchronizedSet(new HashSet<Session>());
+    static Set<Session> users = Collections.synchronizedSet(new HashSet<Session>());
 
 	@OnOpen
 	public void handleOpen(Session session) {
