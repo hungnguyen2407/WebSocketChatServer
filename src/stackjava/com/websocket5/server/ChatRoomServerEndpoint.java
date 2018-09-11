@@ -1,21 +1,16 @@
 package stackjava.com.websocket5.server;
 
+import javax.websocket.*;
+import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.websocket.OnClose;
-import javax.websocket.OnError;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.server.ServerEndpoint;
-
 @ServerEndpoint(value = "/chatRoomServer")
 public class ChatRoomServerEndpoint {
 
-	static Set<Session> users = Collections.synchronizedSet(new HashSet<>());
+	static Set<Session> users = Collections.synchronizedSet(new HashSet<Session>());
 
 	@OnOpen
 	public void handleOpen(Session session) {
